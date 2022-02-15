@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Glass</title>
     <link rel="stylesheet" href="_css/estilo.css">
+    <link rel="stylesheet" href="_css/form.css">
+    <script src="_javascript/funcoes.js"></script>
 </head>
 <body>
 <div id="interface">
@@ -28,44 +30,76 @@
          </ul>
      </nav>
     </header>
+    <header id="cabecalho-artigo">
+        <hgroup>  
+              <h3>Fale Conosco > Contato</h3>
+              <h1>Formulário de Contato</h1>
+              <h2>por Lucas Furquim</h2>
+              <h3 class="data-atu">Atualizado em 11/Fevereiro/2022</h3>
+        </hgroup>  
+      </header>
 
-Fale Conosco > Contato
-Formulário de Contato
-por Gustavo Guanabara
-Atualizado em 01/Maio/2013
+<form method="post" id="f-contato" action="mailto:lucasviniu897@gmail.com" oninput=calc_total();>
+    <fieldset id="usuario">
+        <legend>Identificação do Usuário</legend>
+            <p><label for="nome-usuario">Nome:</label> <input type="text" name="nome" id="nome-usuario" size="20" maxlength="30" placeholder="Nome Completo"></p>
+            <p><label for="senha-usuario">Senha:</label> <input type="password" name="senha" id="senha-usuario" size="5" maxlength="20" placeholder="Senha"></p>
+            <p><label for="email-usuario">E-mail:</label> <input type="email" name="email" id="email-usuario" size="20" maxlength="40" placeholder="E-mail"</p>
+            <fieldset id="sexo"><legend>Sexo:</legend>
+                <input type="radio" name="sex" id="masc"> <label for="masc">Masculino</label> <br>
+                <input type="radio" name="sex" id="femin"> <label for="femin">Feminino</label>
+            </fieldset>
+            <p><label for="nascimento">Data de Nascimento</label>: <input type="date" name="data" id="nascimento"></p>
+    </fieldset>
 
-Identificação do Usuário
-    Nome:
-    Senha:
-    E-mail:
-    Sexo:
-        - Masculino
-        - Feminino
-    Data de Nascimento:
+    <fieldset id="endereco">
+        <legend>Endereço do Usuário</legend>
+            <p><label for="rua">Logradouro:</label> <input type="text" name="endereco" id="rua" size="13" maxlength="80" placeholder="Rua, Av, Trav,"></p>
+            <p><label for="numero">Número:</label> <input type="number" name="numero" id="numero" min="0" max="9999"></p>
+            <p><label for="estado">Estado:</label> <select name="estado-s" id="estado">
+                <optgroup label="Região Sudeste">
+                    <option value="Rj">Rio de Janeiro</option>
+                    <option value="SP" selected>São Paulo</option>
+                    <option value="MG">Minas Gerais</option>
+                </optgroup>
+                <optgroup label="Região Sul">
+                    <option value="PR">Paraná</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                </optgroup>
 
-Endereço do Usuário
-    Logradouro:
-    Número:
-    Estado:
-    Cidade:
-
-Mensagem do Usuário
-    Grau de Urgência:
-    Mensagem:
-
-Quero um Google Glass
-    Gostaria de adquirir um Google Glass quando disponível
-    Cor:
-    Quantidade:
-    Preço Total: R$
-
-
-[BOTÃO ENVIAR]
+            </select> </p>
+            <p><label for="cidade">Cidade:</label> <input type="text" name="cidade-c" id="cidade" maxlength="40" size="20" placeholder="Sua Cidade" list="cidades"></p>
+            <datalist id="cidades">
+               <option value="Rio de Janeiro"></option> 
+               <option value="Nova Iguaçu"></option> 
+               <option value="Niterio"></option> 
+               <option value="Sorocaba"></option> 
+            </datalist>
+    </fieldset>
+    
+    <fieldset id="mensagem">
+        <legend>Mensagem do Usuário</legend>
+            <p><label for="ungente">Grau de Urgência:</label>
+            Min<input type="range" name="grau" id="urgente" min="0" max="10" step="2">Max
+            </p>
+            <p><label for="mensagem">Mensagem:</label> <textarea name="msg" id="mensagem" cols="45" rows="5" placeholder="Deixe aqui sua mensagem"></textarea> </p>
+    </fieldset>
+    
+    <fieldset id="pedido">
+        <legend>Quero um Google Glass</legend>
+            <p> <input type="checkbox" name="google-glass" id="adquirir"><label for="adquirir">Gostaria de adquirir um Google Glass quando disponível</label></p>
+            <p><label for="cor">Cor</label> <input type="color" name="color" id="color" value="#0000ff"></p>
+            <p><label for="quantidade">Quantidade:</label> <input type="number" name="qtds" id="quantidade" min="0" max="5" value="0"></p>
+            <p><label for="preco">Preço Total: R$</label> <input type="text" name="valor" id="preco" placeholder="Total a pagar" readonly></p>
+    </fieldset>
+    
+    <input type="image" name="botão" id="enviar" src="_imagens/botao-enviar.png">
+</form>
 
 <footer id="rodape">
     <p>Copyright&copy; 2022 - by Lucas Furquim <br> <a href="https://github.com/Lucas-furquim?tab=repositories" target="_blank">GitHub</a> | <a href="https://www.instagram.com/furquimlucas._/" target="_blank">Instagram</a></p>
    </footer>
-   <script src="_javascript/funcoes.js"></script>
 </div>
 </body>
 </html>

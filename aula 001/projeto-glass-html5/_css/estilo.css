@@ -211,6 +211,16 @@ table#tabela td.direita {
     text-align: left;
 }
 
+video#video-oque-fazer {
+    width: 500px;
+}
+
+video#mini2 {
+    position: relative;
+    width: 340px;
+    left: 5px;
+}
+
 aside#lateral {
     display: block;
     width: 350px;
